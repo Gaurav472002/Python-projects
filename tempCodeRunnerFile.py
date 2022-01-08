@@ -1,1 +1,0 @@
- root.wm_iconbitmap("1.ico")
