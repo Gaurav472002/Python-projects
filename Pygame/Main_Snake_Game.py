@@ -57,7 +57,7 @@ def welcome(): # function for the welcome screen
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     pygame.mixer.music.load('playback.mp3')
-                    pygame.mixer.music.play()
+                    pygame.mixer.music.play(10000)
                     gameloop()
 
         pygame.display.update()
