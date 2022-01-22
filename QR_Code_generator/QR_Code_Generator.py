@@ -6,9 +6,7 @@ root.geometry("1000x550")
 root.title("QR Code Generator")
 root.config(bg="purple")
 root.resizable(False,False)
-
-
-
+# Function to generate the QR codes
 def generate():
     name=title.get() 
     text=entry.get()
@@ -38,3 +36,16 @@ entry.place(x=40,y=340)
 Button(root,text="GENERATE",width=20,height=2,bg="black",fg="white",font="Arial 12 bold",borderwidth=5,relief=SUNKEN,command=generate ).place(x=50, y=400)
 
 root.mainloop()
+
+
+#to decode the QR code from the image
+
+from pyzbar.pyzbar import decode
+from PIL import Image
+
+d=decode(Image.open("yotube.png"))
+
+print(d[0].data.decode("ascii"))
+
+
+# Gaurav472002
