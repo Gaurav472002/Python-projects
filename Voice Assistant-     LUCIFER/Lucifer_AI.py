@@ -12,7 +12,7 @@ import datetime  # module used to extract the fate and time data
 assistant = pyttsx3.init('sapi5')
 voices = assistant.getProperty('voices')
 # print(voices[1].id)
-assistant.setProperty('voice', voices[0].id)
+assistant.setProperty('voice', voices[1].id)
 
 
 def say(audio):  # function to speak
@@ -114,7 +114,7 @@ if __name__ == "__main__":
             try:
                 say("What should I say?")
                 content = takeCommand()
-                to = "debjitdasofficial@gmail.com"    #enter sender's email here
+                to = "gauravchakraborty472@gmail.com"    #enter sender's email here
                 sendEmail(to, content)
                 say("Email has been sent! successfully")
             except Exception as e:
