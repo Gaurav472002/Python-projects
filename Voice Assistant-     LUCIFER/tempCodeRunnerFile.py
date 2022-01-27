@@ -1,1 +1,0 @@
-actTime = datetime.datetime.now().strftime("%H %M") 

@@ -1,14 +1,15 @@
-from email import message
+
 import webbrowser # module to open web browsers after taking input from the user
 import os
 import smtplib # module required for sending emails
 import random
-from numpy import number
 import wikipedia #module required to fetch data from the wikipedia
 import pyttsx3 #module fot text to speech conversion
 import speech_recognition as sr #pip install speechRecognition
 import datetime  # module used to extract the date and time data
 import pywhatkit
+
+
 
 
 
@@ -68,19 +69,16 @@ def sendEmail(to, content):
     server.sendmail('gauravgamessoftwares@gmail.com', to, content)
     server.close()
 
-def send_wpmsg(numberwp,messagewp,actTime):
+def sendmessage(numberwp,messagewp): # function to send whatsapp message
     
 
-    a1= actTime.split(" ")
-    hours=int(a1[0])
-    minutes=int(a1[1])
-    minutes+=2
+    # a1= actTime.split(" ")
+    # hours=int(a1[0])
+    # minutes=int(a1[1])
+    # minutes+=2
+    pywhatkit.sendwhatmsg_instantly(numberwp,messagewp)
     
 
-    pywhatkit.sendwhatmsg(numberwp,messagewp,hours,minutes)
-    
-    
-  
 if __name__ == "__main__":
     Wish_user()
     while True:
@@ -116,17 +114,36 @@ if __name__ == "__main__":
             # print(songs)    
             os.startfile(os.path.join(music_dir, random.choice(songs)))
 
+        elif ' arijit' in query:
+            music_dir1 = 'E:\\Programming---Codes\\Python Projects\\Voice Assistant-     LUCIFER\\song\\Arijit_Singh'
+            songs1 = os.listdir(music_dir1)
+            # print(songs)    
+            os.startfile(os.path.join(music_dir1, random.choice(songs1)))
+
+
+        elif ' yoyo' in query:
+            music_dir2 = 'E:\\Programming---Codes\\Python Projects\\Voice Assistant-     LUCIFER\\song\\YOYO_Honey_Singh'
+            songs2 = os.listdir(music_dir2)
+            # print(songs)    
+            os.startfile(os.path.join(music_dir2, random.choice(songs2)))
+
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")    
             say(f"Sir, the time is {strTime}")
 
-        elif 'open code' in query:
+        elif 'open vscode' in query:
             codePath = "C:\\Users\\Gaurav_472\\AppData\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
+            
 
         
         elif 'thank you' in  query:
             say("Your most welcome sir")
+
+       
+           
+
+            
 
         elif 'send email' in query:
             try:
@@ -138,19 +155,28 @@ if __name__ == "__main__":
             except Exception as e:
                 print(e)
                 say(" I am not able to send this email really Sorry sir")  
-
-        elif 'send whatsapp message' in query:
-            
-            # say("What is the number?")
-            # numberwp = takeCommand()
-            numberwp='+917001933039'
-            
-            say("what should I say?")
-            messagewp=takeCommand()
-            actTime = datetime.datetime.now().strftime("%H %M")  
-            send_wpmsg(numberwp,messagewp,actTime)
+        
+        elif 'shutdown' in query:
+            say("goodbye sir")
+            exit()
             
 
-        elif 'quit' in query:
+        elif ' message' in query:
+            try:
+                say("phone number please")
+                ph=takeCommand()
+                phnumber="+91"+ph
+                print(phnumber)
+            
+                say("what should I say?")
+                textmessage=takeCommand()
+                sendmessage(phnumber,textmessage)
+            
+            except Exception as e:
+                say("sorry your message was not sent ")
 
-            quit()
+       
+            
+            
+
+        
