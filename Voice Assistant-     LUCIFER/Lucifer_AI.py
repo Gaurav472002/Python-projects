@@ -140,10 +140,23 @@ if __name__ == "__main__":
         elif 'thank you' in  query:
             say("Your most welcome sir")
 
-       
-           
+        elif 'encryptor' in query:
+            codePath1 = "E:\\Programming---Codes\\Python Projects\\Encryptor& Decryptor\\Encryptor_Dec"
+            os.startfile(codePath1)
 
-            
+        elif 'translator' in query:
+            codePath2 = "E:\\Programming---Codes\\Python Projects\\Translator\\translator.exe"
+            os.startfile(codePath2)
+
+        elif 'calculator' in query:
+            codePath3 = "E:\\Programming---Codes\\Python Projects\\Calculator\\calculator.exe"
+            os.startfile(codePath3)
+
+        elif 'weather' in query:
+            codePath4 = "E:\\Programming---Codes\\Python Projects\\Weather-App\\weather_app.exe"
+            os.startfile(codePath4)
+
+        
 
         elif 'send email' in query:
             try:
