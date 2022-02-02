@@ -6,7 +6,7 @@ root.geometry("570x620")
 root.title("Calculator v1.0")
 root.resizable(False,False)
 root.config(bg="black")
-root.wm_iconbitmap("2.ico")
+root.wm_iconbitmap(r"E:\\Programming---Codes\\Python Projects\\Calculator\\2.ico")
 
 equation = ""
 

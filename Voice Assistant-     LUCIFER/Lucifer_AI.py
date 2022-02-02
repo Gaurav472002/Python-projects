@@ -33,13 +33,16 @@ def Wish_user():  # Function to wish user according to time
     if hour>=0 and hour<12:
         say("Good Morning!")
 
-    elif hour>=12 and hour<18:
-        say("Good Afternoon!")   
+    elif hour>=12 and hour<16:
+        say("Good Afternoon!") 
+
+    elif hour>16 and hour<20:
+        say("Good Evening!")   
 
     else:
-        say("Good Evening!")  
+        say("Good Night!")  
 
-    say("I am Lucifer.. your  AI assistant . Please tell me how may I help you")       
+    say("I am Alexa version 1 .0  your  AI assistant . Please tell me how may I help you")       
 
 def takeCommand():  #Function to take microphone input from the user and return string output
     
@@ -140,8 +143,11 @@ if __name__ == "__main__":
         elif 'thank you' in  query:
             say("Your most welcome sir")
 
+        elif 'how are you' in  query:
+            say("I am good what about you?")
+
         elif 'encryptor' in query:
-            codePath1 = "E:\\Programming---Codes\\Python Projects\\Encryptor& Decryptor\\Encryptor_Dec"
+            codePath1 = "E:\\Programming---Codes\\Python Projects\\Encryptor& Decryptor\\Encryptor_Dec.exe"
             os.startfile(codePath1)
 
         elif 'translator' in query:
@@ -162,7 +168,7 @@ if __name__ == "__main__":
             try:
                 say("What should I say?")
                 content = takeCommand()
-                to = "gauravchakraborty472@gmail.com"    #enter sender's email here
+                to = "poojac138@gmail.com"    #enter sender's email here
                 sendEmail(to, content)
                 say("Email has been sent! successfully")
             except Exception as e:

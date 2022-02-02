@@ -13,6 +13,7 @@ root.geometry("1080x400")
 root.title("Translator v1.0")
 root.config(bg="white")
 root.resizable(False,False)
+root.iconbitmap(r"E:\\Programming---Codes\\Python Projects\\Translator\\google.ico")
 
 # function to change the input language given by the user
 def label_change():
@@ -35,10 +36,10 @@ def translate_text():
     msg.showinfo("Translator v1.0","Your text has been \n successfully translated")
  
 
-icon1=PhotoImage(file="google.png")
-root.iconphoto(False,icon1)
+# icon1=PhotoImage(file="google.png")
+# root.iconphoto(False,icon1)
 
-arrow=PhotoImage(file="arrow.png")
+arrow=PhotoImage(file="E:\\Programming---Codes\\Python Projects\\Translator\\arrow.png")
 image_Label=Label(root,image=arrow,bg="white",width=150)
 image_Label.place(x=460,y=50)
 
